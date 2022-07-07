@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.Scanner;
 
@@ -18,9 +19,13 @@ public class FileChooserController {
     {
         try(Formatter output = new Formatter("vector2d.txt") )
         {
-            Vector2D firstVector = new Vector2D(0.0f, 10.0f);
-            // serialize our Vector2D data
-            output.format("%.1f %.1f", firstVector.getX(), firstVector.getY());
+            ArrayList<Vector2D> vector2DData = DBManager.Instance().readVectorTable();
+
+            for (var vector2d : vector2DData)
+            {
+                // serialize our Vector2D data
+                output.format("%.1f %.1f%n", vector2d.getX(), vector2d.getY());
+            }
         }
         catch(Exception exception)
         {
@@ -35,7 +40,7 @@ public class FileChooserController {
         {
            while(input.hasNext())
            {
-               System.out.printf("(%.1f, %.1f)", input.nextFloat(), input.nextFloat());
+               System.out.printf("(%.1f, %.1f)%n", input.nextFloat(), input.nextFloat());
            }
         }
         catch(Exception exception)
