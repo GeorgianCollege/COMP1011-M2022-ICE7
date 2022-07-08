@@ -12,9 +12,8 @@
          <top>
             <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <items>
-                  <Button fx:id="SelectFileButton" mnemonicParsing="false" onAction="#SelectFileButtonClicked" text="Select File" />
-                <Button fx:id="SaveToFileButton" mnemonicParsing="false" onAction="#SaveToFileButtonClicked" text="Save To File" />
-                  <Button fx:id="ReadFromFileButton" mnemonicParsing="false" onAction="#ReadFromFileButtonClicked" text="Read From File" />
+                  <Button fx:id="OpenFileButton" mnemonicParsing="false" onAction="#OpenFileButtonClicked" text="Open File" />
+                <Button fx:id="SaveFileButton" mnemonicParsing="false" onAction="#SaveFileButtonClicked" text="Save File" />
               </items>
             </ToolBar>
          </top>
